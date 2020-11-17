@@ -1,0 +1,35 @@
+% This is the script for testweek2. This script compares reaction times.
+
+%% b
+studentID = input("Please enter your studentID: ");
+
+%% c
+% if int32(studentID) ~= studentID
+%     error("not an integer")
+% end
+% Check if the input is an integer number and not a non-integer number (Hint: mod). If the input is not integer 
+% number, then interrupt script and show the error message. Otherwise, run the rest of code.
+
+
+%% d 
+% Initialize row vector with length 10 
+rowVec = zeros(1,10);
+
+% Replace each element with table of 3
+for i = 1:10
+    rowVec(i) = i*3;
+end
+
+%% e
+x = 10;
+
+while 1
+end
+
+
+
+
+
+
+
+

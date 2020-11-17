@@ -1,0 +1,56 @@
+function scores = dice(players)
+% Simulation of throwing dice with 2-4 players, returns the scores for the
+% players
+
+% Check if integer and number between 2 and 4
+if (int32(players) ~= players) || (players < 2) || (players > 4)
+    error("Please enter an integer between 2-4");
+end
+
+% Set scores for every player to 0
+scores = zeros(1,players);
+
+% Define figure
+fig = figure();
+
+% 
+for i = 1:players
+    throw1 = randi([1,6]);
+    throw2 = randi([1,6]);
+    if throw1 == throw2
+        scores(i) = throw1*10;
+    else
+        scores(i) = throw1 + throw2;
+    end
+    fig(i) = plot(i,scores(i),'*r');
+    xlim([0, players+1]);
+    ylim([0, 60]);
+    input('press number:');
+    hold on;
+    set(fig(i), 'Visible', 'off');
+end
+hold off
+set(fig(:), 'Visible', 'on');
+
+
+
+
+
+
+
+
+
+% scores = zeros(1,players);
+% 
+% fig = figure();
+% for i = 1:players 
+%     scores(i) = randi([1,6]);
+%     plot(i,scores,'*r');
+%     input('Press button: \n')
+%     set(fig, 'Visible', 'off')
+%     hold on
+% end
+% hold off;
+
+end
+
